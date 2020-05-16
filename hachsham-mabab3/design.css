@@ -1,0 +1,631 @@
+@viewport {
+    width: device-width ;
+    zoom: 1.0 ;
+}
+
+@-ms-viewport {
+    width: device-width ;
+}
+
+/* code that is here, until the first @media block, will apply to any screen size */
+@font-face{
+    font-family: Assistant;
+    src: url("Assistant-Regular.ttf");
+}
+
+@font-face{
+    font-family: VarelaRound;
+    src: url("VarelaRound-Regular.ttf");
+}
+
+@font-face{
+    font-family: Abraham;
+    src: url("Abraham-Regular.ttf");
+}
+
+*{
+    touch-action: manipulation;
+    overflow: hidden;
+}
+
+body{
+    height: 109vh;
+    height: calc(var(--vh, 1vh) * 109);
+    width: 100vw;
+    background-color: #e5dbca;
+    font-family: VarelaRound;
+    overflow: hidden;
+    touch-action: manipulation;
+}
+
+.grayScreen{
+    background-color: rgba(88, 88, 88, 0.7);
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    position: absolute;
+    top: 0vh;
+    top: calc(var(--vh, 1vh) * 0);
+    left: 0vw;
+}
+
+.instructions{
+    background-color: rgba(225, 225, 225, 0.9);
+    direction: rtl;
+    text-align: center;
+    border-radius: 3vw;
+    position: absolute;
+    z-index: 1;
+    padding: 3vw;
+}
+
+.instructionsTitle{
+    font-family: Abraham;
+}
+
+.instructionsButton{
+    background-color: cornflowerblue;
+    color: black;
+    border: none;
+    font-family: VarelaRound;
+}
+
+.feedBackBox{
+    direction: rtl;
+    border-radius: 3vh;
+    border-radius: calc(var(--vh, 1vh) * 3);
+    position: absolute;
+    z-index: 2;
+    padding: 3vh;
+    padding: calc(var(--vh, 1vh) * 3);
+}
+
+.backBtn{
+    background-color: black;
+    border-radius: 1.5vh;
+    border-radius: calc(var(--vh, 1vh) * 1.5);
+    color: white;
+    border: 0vw;
+    padding: 1vw;
+}
+
+.title{
+    color: black;
+    position: absolute;
+    direction: rtl;
+    text-align: center; 
+    z-index: -1;
+    font-weight: 1000;
+    font-family: Abraham;
+}
+
+#score{
+    color: gray;
+    text-align: center;
+    font-size: 4vh;
+    font-size: calc(var(--vh, 1vh) * 4);
+    font-family: Abraham;
+}
+
+#boardArea{
+    position: absolute;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.packman{
+    position: relative;
+    z-index: -1;
+}
+
+.allRow{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.rows{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.arrow{
+    cursor: pointer;
+}
+
+.vertical{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+}
+
+.horizontal{
+    position: absolute;
+}
+
+#n37{
+    transform: rotate(180deg);
+}
+
+#n38{
+    transform: rotate(-90deg);
+}
+
+#n40{
+    transform: rotate(90deg);
+}
+
+.questionsArea{
+    background-color: rgba(255, 255, 255, 0.762);
+    direction: rtl;
+    border-radius: 3vh;
+    border-radius: calc(var(--vh, 1vh) * 3);
+    position: absolute;
+    z-index: 1;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    padding-top: 2vh;
+    padding-top: calc(var(--vh, 1vh) * 2);
+}
+
+.answers{
+    direction: rtl;
+}
+
+input{
+    float: right;
+    text-align: left;
+}
+
+span{
+    float: left;
+    text-align: right;
+}
+
+.subjectTitle{
+    text-align: center;
+    font-weight: bold;
+    font-style: underline;
+}
+
+.quesionTitle{
+    font-weight: bolder;
+}
+
+.submitBtn{
+    float: left;
+    margin-bottom: 4vh;
+    margin-bottom: calc(var(--vh, 1vh) * 4);
+    margin-left: 2vw;
+    border: none;
+    color: black;
+    background-color: cornflowerblue;
+    border-radius: 2vh;
+    border-radius: calc(var(--vh, 1vh) * 2);
+    font-family: VarelaRound;
+    padding: 1vw;
+}
+
+.congrats{
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.finalScore{
+    position: absolute;      
+    direction: rtl;
+    background-color: cornflowerblue;
+}
+
+.credits{
+    position: absolute;
+    direction: rtl;
+
+}
+
+.confetti{
+    position: absolute;
+    width: 100vw;
+    z-index: -2;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (orientation: portrait) {
+    .instructions{
+        left: 12.5vw;
+        top: 20vh;
+        top: calc(var(--vh, 1vh) * 20);
+        width: 70vw;
+        font-size: 5vw;
+    }
+    
+    .instructionsTitle{
+        font-size: 9vw;
+    }
+    
+    .instructionsButton{
+        font-size: 5vw;
+        padding: 2vw;
+        border-radius: 2vw;
+    }
+
+    #boardArea{
+        width: 75vw;
+        height: 63vh;
+        height: calc(var(--vh, 1vh) * 63);
+        left: 13vw;
+        top: 12vh;
+        top: calc(var(--vh, 1vh) * 12);
+    } 
+
+    .packman{
+        width: 7.2vw;
+        height: 6.3vh;
+        height: calc(var(--vh, 1vh) * 6.3);
+        left: 33vw;
+        top: 23vh;
+        top: calc(var(--vh, 1vh) * 23);
+    }
+
+    .title{
+        font-size: 10vw;
+        top: 0vh;
+        top: calc(var(--vh, 1vh) * 0);
+        left: 16vw;
+        width: 70vw;
+    }
+
+    .arrow{
+        width: 7vw;
+        height: auto;
+    }
+
+    #score{
+        position: absolute;
+        top: 82vh;
+        top: calc(var(--vh, 1vh) * 82);
+        left: 10vw;
+        font-size: 5vw;
+    }
+
+    .imgBack{
+        width: 30vw;
+        height: 23vh;
+        height: calc(var(--vh, 1vh) * 23);
+        position: absolute;
+        top: 77vh;
+        top: calc(var(--vh, 1vh) * 77);
+        left: 66vw;
+        z-index: -1;
+    }
+
+    .space{
+        width: 3vw;
+        height: 1.7vh;
+        height: calc(var(--vh, 1vh) * 1.7);
+    }
+
+    .rows{
+        width: 73vw;
+        height: 63vh;
+        height: calc(var(--vh, 1vh) * 63);
+        left: 0vw;
+        top: 0vh;
+        top: calc(var(--vh, 1vh) * 0);
+    }
+
+    .vertical{
+        top: 78vh;
+        top: calc(var(--vh, 1vh) * 78);
+        left: 46vw;
+    }
+
+    .horizontal{
+        top: 83.5vh;
+        top: calc(var(--vh, 1vh) * 83.5);
+        left: 32.5vw;
+    }
+
+    .allRow{
+        width: 73vw;
+        left: 1.5vw;
+    }
+    
+    .food{
+        width: 3vw;
+        height: 1.7vh;
+        height: calc(var(--vh, 1vh) * 1.7);
+    }
+
+    .nothing{
+        width: 3vw;
+        height: 1.7vh;
+        height: calc(var(--vh, 1vh) * 1.7);
+    }
+
+    #n37{
+        padding-left: 7vw;
+        padding-right: 6vw;
+    }
+    
+    #n38{
+        margin-top: 0.5vh;
+        margin-top: calc(var(--vh, 1vh) * 0.5);
+    }
+
+    #n40{
+        margin-top: 5vh;
+        margin-top: calc(var(--vh, 1vh) * 5);
+    }
+
+    .questionsArea{
+        width: 75vw;
+        top: 8vh;
+        top: calc(var(--vh, 1vh) * 8);
+        left: 11vw;
+        font-size: 5vw;
+    }
+
+    .subjectTitle{
+        font-size: 6vw;
+    }
+
+    .feedBackBox{
+        font-size: 6vw;
+        width: 45vw;
+        top: 17vh;
+        top: calc(var(--vh, 1vh) * 17);
+        left: 23vw;
+        text-align: center;
+    }
+
+    .backBtn{
+        font-size: 4.5vw;
+        margin-top: 2vh;
+        margin-top: calc(var(--vh, 1vh) * 2);
+        font-family: VarelaRound;
+        padding: 2vw;
+        border-radius: 2vw;
+    }
+
+    .submitBtn{
+        font-size: 4.5vw;
+        padding: 2vw;
+    }
+
+    .congrats{
+        font-size: 12vw;
+        margin-top: 5vh;
+        margin-top: calc(var(--vh, 1vh) * 5);
+    }
+
+    .finalScore{
+        top: 26vh;
+        top: calc(var(--vh, 1vh) * 26);
+        left: 18vw;
+        font-size: 7.5vw;
+        border-radius: 3vw;
+        width: 60vw;
+        text-align: center;
+        padding: 2vw;
+    }
+
+    .credits{
+        top: 75vh;
+        top: calc(var(--vh, 1vh) * 75);
+        left: 33vw;
+        font-size: 4.5vw;
+        width: 65vw;
+    }
+
+    .confetti{
+        width: 100vw;
+        height: 70vh;
+        height: calc(var(--vh, 1vh) * 70);
+        top: 15vh;
+        top: calc(var(--vh, 1vh) * 15);
+        left: 0vw;
+    }
+}
+
+/* Extra small devices landscape (phones, 600px and down) */
+@media only screen and (orientation: landscape) {
+    .instructions{
+        left: 12vw;
+        top: 10vh;
+        top: calc(var(--vh, 1vh) * 10);
+        width: 70vw;
+        font-size: 3vw;
+    }
+    
+    .instructionsTitle{
+        font-size: 6vw;
+    }
+    
+    .instructionsButton{
+        font-size: 3vw;
+        padding: 1vw;
+        border-radius: 2vw;
+    }
+
+    #boardArea{
+        width: 50vw;
+        height: 90vh;
+        height: calc(var(--vh, 1vh) * 90);
+        left: 5vw;
+        top: 7vh;
+        top: calc(var(--vh, 1vh) * 7);
+    } 
+
+    .imgBack{
+        width: 32vw;
+        height: 66vh;
+        height: calc(var(--vh, 1vh) * 66);
+        position: absolute;
+        top: 34vh;
+        top: calc(var(--vh, 1vh) * 34);
+        left: 63vw;
+        z-index: -1;
+    }
+
+    .title{
+        font-size: 5vw;
+        top: 1vh;
+        top: calc(var(--vh, 1vh) * 1);
+        left: 65vw;
+    }
+
+    .packman{
+        width: 3.5vw;
+        height: 8vh;
+        height: calc(var(--vh, 1vh) * 8);
+        left: 23vw;
+        top: 33vh;
+        top: calc(var(--vh, 1vh) * 33);
+    }
+
+    #score{
+        position: absolute;
+        top: 17vh;
+        top: calc(var(--vh, 1vh) * 17);
+        left: 72vw;
+        font-size: 3vw;
+    }
+
+    .space{
+        width: 1.7vw;
+        height: 3vh;
+        height: calc(var(--vh, 1vh) * 3);
+    }
+
+    .arrow{
+        width: 4vw;
+        height: auto;
+    }
+
+    .rows{
+        width: 50vw;
+        height: 90vh;
+        height: calc(var(--vh, 1vh) * 90);
+        top: 0vh;
+        top: calc(var(--vh, 1vh) * 0);
+        left: 0vw;
+    }
+
+    .vertical{
+        top: 34vh;
+        top: calc(var(--vh, 1vh) * 34);
+        left: 61vw;
+    }
+
+    .horizontal{
+        top: 41.5vh;
+        top: calc(var(--vh, 1vh) * 41.5);
+        left: 49.4vw;
+    }
+
+    .allRow{
+        width: 50vw;
+        left: 1.5vw;
+    }
+    
+    .food{
+        width: 1.7vw;
+        height: 3vh;
+        height: calc(var(--vh, 1vh) * 3);
+    }
+
+    .nothing{
+        width: 1.7vw;
+        height: 3vh;
+        height: calc(var(--vh, 1vh) * 3);
+    }
+
+    .questionsArea{
+        width: 75vw;
+        top: 8vh;
+        top: calc(var(--vh, 1vh) * 8);
+        left: 11vw;
+        font-size: 2.5vw;
+    }
+
+    .subjectTitle{
+        font-size: 3vw;
+    }
+
+    .feedBackBox{
+        font-size: 4vw;
+        width: 45vw;
+        top: 20vh;
+        top: calc(var(--vh, 1vh) * 20);
+        left: 27vw;
+        text-align: center;
+    }
+
+    .backBtn{
+        font-size: 3vw;
+        margin-top: 1vh;
+        margin-top: calc(var(--vh, 1vh) * 1);
+        font-family: VarelaRound;
+        padding: 1vw;
+        border-radius: 1.5vw;
+    }
+
+    .submitBtn{
+        font-size: 2.5vw;
+        padding: 1vw;
+    }
+
+    #n37{
+        transform: rotate(180deg);
+        padding-left: 2.5vw;
+        padding-right: 8vw;
+    }
+    
+    #n38{
+        transform: rotate(-90deg);
+        margin-bottom: 8vh;
+        margin-bottom: calc(var(--vh, 1vh) * 8);
+    }
+    
+    #n40{
+        margin-bottom: 1vh;
+        margin-bottom: calc(var(--vh, 1vh) * 1);
+    }
+
+    .congrats{
+        font-size: 7vw;
+        margin-top: 3vh;
+        margin-top: calc(var(--vh, 1vh) * 3);
+    }
+
+    .finalScore{
+        top: 35vh;
+        top: calc(var(--vh, 1vh) * 35);
+        left: 63vw;
+        font-size: 3.5vw;
+        padding: 2vw;
+        border-radius: 2vw;
+        width: 30vw;
+        text-align: center;
+    }
+
+    .credits{
+        top: 57vh;
+        top: calc(var(--vh, 1vh) * 57);
+        left: 55vw;
+        font-size: 3vw;
+    }
+
+    .confetti{
+        top: 0vh;
+        top: calc(var(--vh, 1vh) * 0);
+        left: 42vw;
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+        width: auto;
+    }
+}
